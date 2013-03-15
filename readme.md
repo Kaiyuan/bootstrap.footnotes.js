@@ -1,3 +1,6 @@
+#No bootstrap
+Only js [footontse.js](http://kaiyuan.github.com/footnotes.js/sup.html)
+
 bootstrap.footnotes.js
 =============
 

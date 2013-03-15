@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf8">
+	<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0" /><!--缩放-->
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+	<title>Sup</title>
+	<style>
+	body {background: #f7f7f7;margin: 0;}
+	a{
+		color: #2C769E;
+		text-decoration: none;
+		outline:none;/* 去掉IE虚线 */
+	}
+	.box {
+		position: fixed;
+		background: #fff;
+		width: 640px;
+		font-size: 1em;
+		font-family: "museo-slab", "museo slab", "Courier New", "Helvetica Neue", Ubuntu, "WenQuanYi Micro Hei", Helvetica, "ff-tisa-web-pro-1","ff-tisa-web-pro-2","Lucida Grande", "Apple LiGothic", "LiHei Pro", "Hiragino Sans GB W6", "Hiragino Sans GB", "Microsoft JhengHei", "PMingLiU", Arial, sans-serif;
+		-webkit-font-smoothing:antialiased;
+		padding: 30px;
+		box-shadow: 0 1px 3px rgba(0,0,0,.3);
+		left: 50%;
+		margin-left: -320px;
+		top: 40%;
+		border-radius: 6px;
+	}
+	sup {
+		width: 19px;
+		height: 10px;
+		display: inline-block;
+		text-align: center;
+		text-indent: -9999px;
+		-webkit-font-smoothing:antialiased;
+		background: url(img/ellipsis.png) no-repeat center center;
+	}
+	.sup-box {
+		max-width: 220px;
+		width: auto;
+		max-height: 120px;
+		padding: 10px;
+		border: 2px solid #000;
+		background: #fff;
+		border-radius: 6px;
+		box-shadow: 0 1px 5px rgba(0,0,0,.3);
+		position: fixed;
+		vertical-align: middle;
+		word-wrap:break-word;
+		z-index: 100;
+	}
+	.sup-box:after {
+		content: "";
+		width: 0px;
+		height: 0px;
+		border: 5px solid #000;
+		border-color: rgba(255,255,255,0) #000 #000 rgba(255,255,255,0);
+		z-index: 99;
+		position: absolute;
+		bottom: -6px;
+		margin-left: -8px;
+		left: 50%;
+		box-shadow: 2px 2px 3px rgba(0,0,0,.1);
+		transform-style: preserve-3d;
+		-webkit-transform-style: preserve-3d;
+		-moz-transform-style: preserve-3d;
+		-o-transform-style: preserve-3d;
+	    -webkit-transform-origin: center center;
+	    -moz-transform-origin: center center;
+	    -o-transform-origin: center center;
+	    transform-origin: center center;
+	    transform: rotateZ(45deg);
+	    -webkit-transform: rotateZ(45deg);
+	    -moz-transform: rotateZ(45deg);
+	    -o-transform: rotateZ(45deg);
+	}
+	@media screen and (-webkit-min-device-pixel-ratio: 2) {
+		.box sup {
+			background-image: url(img/ellipsis@2x.png);
+			background-size: cover;
+		}
+	}
+	</style>
+</head>
+<body>
+	<div class="box">
+		This is a box<sup data-text="我覺得好得意。你話係唔係？好好玩啊。">1</sup> and... I don't know.<br>
+  		<a href="http://taitems.github.com/UX-Lab/BootstrapFootnotes/index.html">bootstrap.footnotes.js</a> no bootstrap!
+	</div>
+	<script src="script.js" type="text/javascript" charset="utf-8"></script>
+</body>
+</html>
