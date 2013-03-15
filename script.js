@@ -7,7 +7,7 @@ $('sup').hover(
 		// var suph = $(this).height();
 		var divx = $('.sup-box').width();
 		var divy = $('.sup-box').height();
-		$('.sup-box').css('left', supx-divx/2);
+		$('.sup-box').css('left', supx-divx/2-2);
 		$('.sup-box').css('top', supy-divy-30);
 		$('.sup-box').hide();
 		$('.sup-box').fadeIn("fast");
