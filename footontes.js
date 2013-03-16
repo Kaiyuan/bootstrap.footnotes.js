@@ -8,20 +8,16 @@ $('.sup').hover(
 			}else {
 				$("body").append('<div class="sup-box">'+suptext+'</div>' );
 			};
+			var sbox = $('.sup-box');
 			var supx = $(this).offset().left;
 			var supy = $(this).offset().top;
 			var supw = $(this).width();
-			var boxx = $('.sup-box').width();
-			var boxy = $('.sup-box').height();
-			if (supimg) {
-				$('.sup-box').css('left', supx+supw/2-boxx/2-2);
-				$('.sup-box').css('top', supy-boxy-10);
-			} else{
-				$('.sup-box').css('left', supx+supw/2-boxx/2-12);
-				$('.sup-box').css('top', supy-boxy-30);
-			};
-			$('.sup-box').hide();
-			$('.sup-box').fadeIn("fast");
+			var boxx = sbox.outerWidth();
+			var boxy = sbox.outerHeight();
+			sbox.css('left', supx+supw/2-boxx/2);
+			sbox.css('top', supy-boxy-8);
+			sbox.hide();
+			sbox.fadeIn("fast");
 		};
 	},
 	function () {
