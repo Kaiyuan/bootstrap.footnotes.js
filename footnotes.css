@@ -1,0 +1,67 @@
+sup[class="sup"] {
+	width: 19px;
+	height: 10px;
+	display: inline-block;
+	text-align: center;
+	text-indent: -9999px;
+	-webkit-font-smoothing:antialiased;
+	background: url(img/ellipsis.png) no-repeat center center;
+}
+span[class="sup"]:hover {
+	background: rgb(255,255,204);
+	color: #000;
+}
+.sup-box, .sup-img {
+	line-height: 1em;
+	max-width: 220px;
+	text-align: left;
+	width: auto;
+	max-height: 120px;
+	padding: 10px;
+	border: 2px solid #000;
+	background: #fff;
+	border-radius: 6px;
+	box-shadow: 0 1px 5px rgba(0,0,0,.5),inset 0 0 5px rgba(0,0,0,.3);
+	text-shadow: 0 1px 1px rgba(0,0,0,.1);
+	position: absolute;
+	vertical-align: middle;
+	word-wrap:break-word;
+	z-index: 100;
+}
+.sup-box * {
+	max-height: 120px;
+	max-width: 100%;
+}
+.sup-box:after {
+	content: "";
+	width: 0px;
+	height: 0px;
+	border: 5px solid #000;
+	border-color: rgba(255,255,255,0) #000 #000 rgba(255,255,255,0);
+	z-index: 99;
+	position: absolute;
+	bottom: -7px;
+	margin-left: -5px;
+	left: 50%;
+	box-shadow: 1px 1px 2px rgba(0,0,0,.3);
+	transform-style: preserve-3d;
+	-webkit-transform-style: preserve-3d;
+	-moz-transform-style: preserve-3d;
+	-o-transform-style: preserve-3d;
+    -webkit-transform-origin: center center;
+    -moz-transform-origin: center center;
+    -o-transform-origin: center center;
+    transform-origin: center center;
+    transform: rotateZ(45deg);
+    -webkit-transform: rotateZ(45deg);
+    -moz-transform: rotateZ(45deg);
+    -o-transform: rotateZ(45deg);
+}
+.sup-img {padding: 0;border-radius: 0;border-color: #fff;}
+.sup-img:after{border-color: rgba(255,255,255,0) #fff #fff rgba(255,255,255,0);}
+@media screen and (-webkit-min-device-pixel-ratio: 2) {
+	sup[class="sup"] {
+		background-image: url(img/ellipsis@2x.png);
+		background-size: cover;
+	}
+}
