@@ -11,7 +11,7 @@ $('.sup').hover(
 			var sbox = $('.sup-box');
 			var supx = $(this).offset().left;
 			var supy = $(this).offset().top;
-			var supw = $(this).width();
+			var supw = $(this).outerWidth();
 			var boxx = sbox.outerWidth();
 			var boxy = sbox.outerHeight();
 			sbox.css('left', supx+supw/2-boxx/2);
