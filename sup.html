@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="jquery-1.9.0.min.js" type="text/javascript" charset="utf-8"></script>
 	<title>Footnotes.js</title>
 	<link href="museo-slab.css" rel="stylesheet" type="text/css" />
 	<style>
@@ -12,7 +12,7 @@
 		text-align: center;
 		font-size: 1em;
 		line-height: 2em;
-		font-family: "museo slab", "museo-slab", "Helvetica Neue", Ubuntu, "WenQuanYi Micro Hei", Helvetica, "ff-tisa-web-pro-1","ff-tisa-web-pro-2","Lucida Grande", "Apple LiGothic", "LiHei Pro", "Hiragino Sans GB W6", "Hiragino Sans GB", "Microsoft JhengHei", "PMingLiU", Arial, sans-serif;
+		font-family: "museo-slab", "Helvetica Neue", Ubuntu, "WenQuanYi Micro Hei", Helvetica, "ff-tisa-web-pro-1","ff-tisa-web-pro-2","Lucida Grande", "Apple LiGothic", "LiHei Pro", "Hiragino Sans GB W6", "Hiragino Sans GB", "Microsoft JhengHei", "PMingLiU", Arial, sans-serif;
 		-webkit-font-smoothing:antialiased;
 		text-shadow: 0 1px 1px #fff;
 	}
@@ -95,16 +95,19 @@
 			This is a box<sup class="sup" data-text="很喜歡這種提示方式">1</sup> and... I don't know. <span class="sup" data-text="歡迎">Welcome</span> fork at <a href="https://github.com/Kaiyuan/bootstrap.footnotes.js" class="sup" data-text="本項目的 Github 倉庫">Github</a>.<br>
 	  		<a class="sup" data-text="原始版本需要引用 Bootstrap." href="http://taitems.github.com/UX-Lab/BootstrapFootnotes/index.html">bootstrap.footnotes.js</a> no bootstrap<sup class="sup" data-text="我製作的只有一個 JS 文件">2</sup>!<br>
 	  	</p>
-	  	<h3>EXAMPLE HTML</h3>
+	  	<h3><span class="sup" data-sur="class:sur and data-sur">EXAMPLE HTML</span></h3>
   		<pre lang="html">&lt;span class="<span class="sup" data-text="添加類的名稱">sup</span>" <span class="sup" data-text="內容部分">data-text="This's text."</span>&gt;Text&lt;/span&gt;
-<span class="sup" data-text="SUP 標籤會被修改為圖標">&lt;sup class="sup" data-text="The sup."&gt;1&lt;sup&gt;</span></pre>
+<span class="sup" data-text="SUP 標籤會被修改為圖標">&lt;sup class="sup" data-text="The sup."&gt;1&lt;sup&gt;</span>
+<span class="sup" data-sur="Right">&lt;span class="sup" data-sur="The sur."&gt;Right&lt;span&gt;</span>
+<span class="sup" data-sul="Left">&lt;span class="sup" data-sul="The sul."&gt;Left&lt;span&gt;</span>
+<span class="sup" data-sub="Bottom">&lt;span class="sup" data-sub="The sub."&gt;Bottom&lt;span&gt;</span></pre>
   		<h3>
   			<span class="sup" data-img="http://farm9.staticflickr.com/8177/7950251026_f6761be7c4_n.jpg">PICTURE</span>.
   		</h3>
   		<pre lang="html">&lt;span class="sup" <span class="sup" data-text="The picture url.">data-img="url"</span>&gt;Text&lt;/span&gt;</pre>
 		<h3>REQUIREMENTS</h3>
   		<ul>
-  			<li>jQuery Latest</li>
+  			<li class="sup" data-sul="class:sul">jQuery Latest</li>
   			<li>footnotes.css</li>
   			<li>footnotes.js</li>
   		</ul>
