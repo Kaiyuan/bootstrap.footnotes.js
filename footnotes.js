@@ -9,6 +9,7 @@ $('.sup').hover(
 		var supy = $(this).offset().top;
 		var supw = $(this).outerWidth();
 		var suph = $(this).outerHeight();
+		var textboxw = $(this).parent().outerWidth();
 		if (suptext||supimg) {
 			if (supimg) {
 				$("body").append('<div class="sup-box sup-img"><img src="'+supimg+'"></div>' );
@@ -18,7 +19,13 @@ $('.sup').hover(
 			var supbox = $('.sup-box');
 			var supboxx = supbox.outerWidth();
 			var supboxy = supbox.outerHeight();
-			supbox.css('left', supx+supw/2-supboxx/2);
+			var supboxl = supx+supw/2-supboxx/2;
+			if (supboxl<0){supboxl=0};
+			if (textboxw&&supw>(textboxw-supboxx)/2) {
+				supbox.css('left', supx+supw-supboxx/2-20);
+			} else{
+				supbox.css('left', supboxl);
+			};
 			supbox.css('top', supy-supboxy-8);
 			supbox.hide();
 			
@@ -43,7 +50,13 @@ $('.sup').hover(
 			var subbox = $('.sub-box');
 			var subboxx = subbox.outerWidth();
 			var sybboxy = subbox.height();
-			subbox.css('left', supx+supw/2-subboxx/2);
+			var subboxl = supx+supw/2-subboxx/2;
+			if (subboxl<0){subboxl=0};
+			if (textboxw&&supw>(textboxw-subboxx)/2) {
+				subbox.css('left', supx+supw-subboxx/2-20);
+			} else{
+				subbox.css('left', subboxl);
+			};
 			subbox.css('top', supy+sybboxy+5);
 			subbox.hide();
 		};
@@ -51,5 +64,5 @@ $('.sup').hover(
 	},
 	function () {
 		$('.sup-box,.sur-box,.sul-box,.sub-box').detach();
-	};
+	}
 );
