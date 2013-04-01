@@ -51,5 +51,5 @@ $('.sup').hover(
 	},
 	function () {
 		$('.sup-box,.sur-box,.sul-box,.sub-box').detach();
-	}
+	};
 );
