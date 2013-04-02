@@ -9,7 +9,7 @@ $('.sup').hover(
 		var supy = $(this).offset().top;
 		var supw = $(this).outerWidth();
 		var suph = $(this).outerHeight();
-		var textboxw = $(this).parent('p').outerWidth();
+		var textboxw = $(this).parent('p,blockquote').outerWidth();
 		if (suptext||supimg) {
 			if (supimg) {
 				$("body").append('<div class="sup-box sup-img"><img src="'+supimg+'"></div>' );
