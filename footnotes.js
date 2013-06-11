@@ -6,13 +6,16 @@ $('.sup').hover(
 		var subtext = $(this).data("sub");
 		var sultext = $(this).data("sul");
 		var sTop = $(window).scrollTop()
+		var wHeight = $(window).height();
+		var wWidth = $(window).Width();
 		var supx = $(this).offset().left;
 		var supy = $(this).offset().top;
 		var supw = $(this).outerWidth();
 		var suph = $(this).outerHeight();
 		var textboxw = $(this).parent('p,blockquote').outerWidth();
-		function subBox () {
-			$("body").append('<div class="sub-box">'+subtext+'</div>' );
+
+		function subBox (text) {
+			$("body").append('<div class="sub-box">'+text+'</div>' );
 			var subbox = $('.sub-box');
 			var subboxx = subbox.outerWidth();
 			var subboxl = supx+supw/2-subboxx/2;
@@ -25,45 +28,76 @@ $('.sup').hover(
 			subbox.css('top', supy+suph+5);
 			subbox.hide();
 		}
-		if (suptext||supimg) {
-			if (sTop<supy-50) {
-				if (supimg) {
-					$("body").append('<div class="sup-box sup-img"><img src="'+supimg+'"></div>' );
-				}else {
-					$("body").append('<div class="sup-box">'+suptext+'</div>' );
-				};
-				var supbox = $('.sup-box');
-				var supboxx = supbox.outerWidth();
-				var supboxy = supbox.outerHeight();
-				var supboxl = supx+supw/2-supboxx/2;
-				if (supboxl<0){supboxl=0};
-				if (textboxw&&supw>(textboxw-supboxx)/2) {
-					supbox.css('left', supx+supw-supboxx/2-20);
-				} else{
-					supbox.css('left', supboxl);
-				};
-				supbox.css('top', supy-supboxy-8);
-				supbox.hide();
-			} else{subBox()};
-			
-		};
-		if (surtext) {
-			$("body").append('<div class="sur-box"><div>'+surtext+'</div></div>' );
+		function supBox (text) {
+			if (supimg) {
+				$("body").append('<div class="sup-box sup-img"><img src="'+supimg+'"></div>' );
+			}else {
+				$("body").append('<div class="sup-box">'+text+'</div>' );
+			};
+			var supbox = $('.sup-box');
+			var supboxx = supbox.outerWidth();
+			var supboxy = supbox.outerHeight();
+			var supboxl = supx+supw/2-supboxx/2;
+			if (supboxl<0){supboxl=0};
+			if (textboxw&&supw>(textboxw-supboxx)/2) {
+				supbox.css('left', supx+supw-supboxx/2-20);
+			} else{
+				supbox.css('left', supboxl);
+			};
+			supbox.css('top', supy-supboxy-8);
+			supbox.hide();
+		}
+		function surBox (text) {
+			$("body").append('<div class="sur-box"><div>'+text+'</div></div>' );
 			var surbox = $('.sur-box');
 			surbox.css('left', supx+supw+16);
 			surbox.css('top', supy+suph/2-14);
 			surbox.hide();
-		};
-		if (sultext) {
-			$("body").append('<div class="sul-box"><div>'+sultext+'</div></div>' );
+		}
+		function sulBox (text) {
+			$("body").append('<div class="sul-box"><div>'+text+'</div></div>' );
 			var sulbox = $('.sul-box');
 			var sulboxx = sulbox.outerWidth();
 			sulbox.css('left', supx-sulboxx-16);
 			sulbox.css('top', supy+suph/2-14);
 			sulbox.hide();
+		}
+
+		if (suptext||supimg) {
+			if (sTop<supy-50&&!supimg) {
+				supBox(suptext)
+			} else {
+				subBox(suptext)
+			};
+		};
+		if (surtext) {
+			if (wWidth-supw-supy>200) {
+				surBox(surtext);
+			} else if(supy>200){
+				sulBox(surtext);
+			}else if (sTop<supy-50) {
+				supBox(surtext)
+			} else {
+				subBox(surtext)
+			};
+		};
+		if (sultext) {
+			if(supy>200){
+				sulBox(sultext);
+			} else if (wWidth-supw-supy>200) {
+				surBox(sultext);
+			} else if (sTop<supy-50) {
+				supBox(sultext)
+			} else {
+				subBox(sultext)
+			};
 		};
 		if (subtext) {
-			subBox()
+			if (supy-sTop>wHeight-250) {
+				subBox(subtext);
+			} else {
+				supBox(subtext);
+			};
 		};
 		$('.sup-box,.sur-box,.sul-box,.sub-box').fadeIn("fast");
 	},
