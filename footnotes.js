@@ -7,7 +7,7 @@ $('.sup').hover(
 		var sultext = $(this).data("sul");
 		var sTop = $(window).scrollTop()
 		var wHeight = $(window).height();
-		var wWidth = $(window).Width();
+		var wWidth = $(window).width();
 		var supx = $(this).offset().left;
 		var supy = $(this).offset().top;
 		var supw = $(this).outerWidth();
@@ -25,7 +25,7 @@ $('.sup').hover(
 			} else{
 				subbox.css('left', subboxl);
 			};
-			subbox.css('top', supy+suph+5);
+			subbox.css('top', supy+suph+8);
 			subbox.hide();
 		}
 		function supBox (text) {
@@ -64,16 +64,16 @@ $('.sup').hover(
 		}
 
 		if (suptext||supimg) {
-			if (sTop<supy-50&&!supimg) {
+			if (sTop<supy-50) {
 				supBox(suptext)
-			} else {
+			} else if(!supimg) {
 				subBox(suptext)
 			};
 		};
 		if (surtext) {
-			if (wWidth-supw-supy>200) {
+			if (wWidth-supw-supx>100) {
 				surBox(surtext);
-			} else if(supy>200){
+			} else if(supx>140){
 				sulBox(surtext);
 			}else if (sTop<supy-50) {
 				supBox(surtext)
@@ -82,9 +82,9 @@ $('.sup').hover(
 			};
 		};
 		if (sultext) {
-			if(supy>200){
+			if(supx>200){
 				sulBox(sultext);
-			} else if (wWidth-supw-supy>200) {
+			} else if (wWidth-supw-supx>100) {
 				surBox(sultext);
 			} else if (sTop<supy-50) {
 				supBox(sultext)
@@ -93,7 +93,7 @@ $('.sup').hover(
 			};
 		};
 		if (subtext) {
-			if (supy-sTop<wHeight-250) {
+			if (supy-sTop<wHeight-80) {
 				subBox(subtext);
 			} else {
 				supBox(subtext);
