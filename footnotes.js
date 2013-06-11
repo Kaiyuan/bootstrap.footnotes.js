@@ -93,7 +93,7 @@ $('.sup').hover(
 			};
 		};
 		if (subtext) {
-			if (supy-sTop>wHeight-250) {
+			if (supy-sTop<wHeight-250) {
 				subBox(subtext);
 			} else {
 				supBox(subtext);
