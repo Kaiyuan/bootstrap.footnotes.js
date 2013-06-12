@@ -75,18 +75,18 @@ $('.sup').hover(
 				surBox(surtext);
 			} else if(supx>140){
 				sulBox(surtext);
-			}else if (sTop<supy-50) {
+			}else if (sTop<supy-30) {
 				supBox(surtext)
 			} else {
 				subBox(surtext)
 			};
 		};
 		if (sultext) {
-			if(supx>200){
+			if(supx>50){
 				sulBox(sultext);
 			} else if (wWidth-supw-supx>100) {
 				surBox(sultext);
-			} else if (sTop<supy-50) {
+			} else if (sTop<supy-100) {
 				supBox(sultext)
 			} else {
 				subBox(sultext)

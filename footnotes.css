@@ -57,17 +57,17 @@ sup[class="sup"] {
 	bottom: -7px;
 	margin-left: -5px;
 	left: 50%;
-	border-color: rgba(255,255,255,0) #000 #000 rgba(255,255,255,0);
+	border-color: transparent #000 #000 transparent;
 	box-shadow: 1px 1px 2px rgba(0,0,0,.3);
 }
 .sub-box::after{
 	top: -7px;
 	margin-left: -5px;
 	left: 50%;
-	border-color: #000 rgba(255,255,255,0) rgba(255,255,255,0) #000;
+	border-color: #000 transparent transparent #000;
 }
 .sup-img {padding: 0;border-radius: 0;border-color: #fff;}
-.sup-img::after{border-color: rgba(255,255,255,0) #fff #fff rgba(255,255,255,0);}
+.sup-img::after{border-color: transparent #fff #fff transparent;}
 .sur-box, .sul-box {
 	color: #fff;
 	max-width: 240px;
@@ -100,9 +100,9 @@ sup[class="sup"] {
 }
 .sur-box::after {
 	left: -26px;
-	border-color: rgba(255,255,255,0) #222 rgba(255,255,255,0) rgba(255,255,255,0);
+	border-color: transparent #222 transparent transparent;
 }
 .sul-box::after {
 	right: -26px;
-	border-color: rgba(255,255,255,0) rgba(255,255,255,0) rgba(255,255,255,0) #222;
+	border-color: transparent transparent transparent #222;
 }
