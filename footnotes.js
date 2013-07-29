@@ -1,4 +1,4 @@
-$('.sup').hover(
+$('.sup').on("hover", ".sup"
 	function () {
 		var suptext = $(this).data("text");
 		var supimg = $(this).data("img");
