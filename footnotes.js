@@ -1,5 +1,5 @@
 jQuery(document).ready(function($) {
-	$('.sup').on("hover", ".sup"
+	$('.sup').hover(
 		function () {
 			var suptext = $(this).data("text");
 			var supimg = $(this).data("img");
