@@ -1,5 +1,5 @@
 jQuery(document).ready(function($) {
-	$('.sup').hover(
+	$(document).on('mouseenter','.sup',
 		function () {
 			var suptext = $(this).data("text");
 			var supimg = $(this).data("img");
@@ -101,7 +101,9 @@ jQuery(document).ready(function($) {
 				};
 			};
 			$('.sup-box,.sur-box,.sul-box,.sub-box').fadeIn("fast");
-		},
+		}
+	);
+	$(document).on('mouseleave','.sup',
 		function () {
 			$('.sup-box,.sur-box,.sul-box,.sub-box').detach();
 		}
