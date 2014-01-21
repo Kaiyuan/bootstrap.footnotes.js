@@ -30,6 +30,7 @@ sup[class="sup"] {
 	vertical-align: middle;
 	word-wrap:break-word;
 	z-index: 100;
+	display: none;
 }
 .sup-box *, .sub-box * {
 	max-height: 120px;

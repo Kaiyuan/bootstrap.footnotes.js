@@ -27,7 +27,6 @@ jQuery(document).ready(function($) {
 					subbox.css('left', subboxl);
 				};
 				subbox.css('top', supy+suph+8);
-				subbox.hide();
 			}
 			function supBox (text) {
 				if (supimg) {
@@ -46,14 +45,12 @@ jQuery(document).ready(function($) {
 					supbox.css('left', supboxl);
 				};
 				supbox.css('top', supy-supboxy-8);
-				supbox.hide();
 			}
 			function surBox (text) {
 				$("body").append('<div class="sur-box"><div>'+text+'</div></div>' );
 				var surbox = $('.sur-box');
 				surbox.css('left', supx+supw+16);
 				surbox.css('top', supy+suph/2-14);
-				surbox.hide();
 			}
 			function sulBox (text) {
 				$("body").append('<div class="sul-box"><div>'+text+'</div></div>' );
@@ -61,7 +58,6 @@ jQuery(document).ready(function($) {
 				var sulboxx = sulbox.outerWidth();
 				sulbox.css('left', supx-sulboxx-16);
 				sulbox.css('top', supy+suph/2-14);
-				sulbox.hide();
 			}
 
 			if (suptext||supimg) {
