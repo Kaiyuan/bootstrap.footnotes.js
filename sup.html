@@ -29,6 +29,7 @@
 		background: #fff;
 		width: 640px;
 		padding: 30px;
+		margin: 60px 0;
 		box-shadow: 0 1px 3px rgba(0,0,0,.3);
 		border-radius: 6px;
 	}
@@ -74,6 +75,7 @@
 	h3 {font-weight: 500;}
 	h3, h2 {margin: 0;}
 	ul {margin-top: 0;}
+	p {margin: .1em 0;}
 	pre {
 		box-shadow: inset 0 1px 7px rgba(0,0,0,.2);
 		padding: 5px 15px;
@@ -82,8 +84,29 @@
 		font-size: 14px;
 		font-family: "Courier New", Helvetica, sans-serif;
 		text-shadow: 0 1px 1px rgba(0,0,0,.05);
+		margin: 1em 0;
 	}
 	pre span[class="sup"]:hover {background: rgba(255,255,204,.5);color: #000;}
+	hr {
+		position: relative;
+		border: 0 solid transparent;
+		width: 100%;
+		height: 0;
+		background-color: transparent;
+		margin: 1.5em 0;
+		padding: 6px 0;
+	}
+	hr::after {
+		position: absolute;
+		text-align: center;
+		width: 100%;
+		height: 12px;
+		font-size: 12px;
+		line-height: 12px;
+		left: 0;
+		top: 0;
+		content: "-— ● ✤ ● —-";
+	}
 	footer, footer * {font-size: 12px;color: #bbb;}
 	@media screen and (-webkit-min-device-pixel-ratio: 2) {pre {font-family: "museo slab", "museo-slab", "Helvetica Neue", Ubuntu, "WenQuanYi Micro Hei", Helvetica, "ff-tisa-web-pro-1","ff-tisa-web-pro-2","Lucida Grande", "Apple LiGothic", "LiHei Pro", "Hiragino Sans GB W6", "Hiragino Sans GB", "Microsoft JhengHei", "PMingLiU", Arial, sans-serif;}}
 	</style>
@@ -91,24 +114,41 @@
 </head>
 <body>
 	<div class="box">
-		<h2>Bootstrap.footnotes.js No Bootstrap</h2>
+		<h1>Bootstrap.footnotes.js No Bootstrap</h1>
 		<p>
 			This is a box<sup class="sup" data-text="很喜歡這種提示方式">1</sup> and... I don't know. <span class="sup" data-text="歡迎">Welcome</span> fork at <a href="https://github.com/Kaiyuan/bootstrap.footnotes.js" class="sup" data-text="本項目的 Github 倉庫">Github</a>.<br>
 	  		<a class="sup" data-text="原始版本需要引用 Bootstrap." href="http://taitems.github.com/UX-Lab/BootstrapFootnotes/index.html">bootstrap.footnotes.js</a> no bootstrap<sup class="sup" data-text="我製作的只有一個 JS 文件">2</sup>!<br>
 	  	</p>
-	  	<h3><span class="sup" data-sur="class:sur and data-sur">EXAMPLE HTML</span></h3>
+
+	  	<hr>
+
+	  	<h3>EXAMPLE HTML</h3>
   		<pre lang="html">&lt;span class="<span class="sup" data-text="添加類的名稱">sup</span>" <span class="sup" data-text="內容部分">data-text="This's text."</span>&gt;Text&lt;/span&gt;
 <span class="sup" data-text="SUP 標籤會被修改為圖標">&lt;sup class="sup" data-text="The sup."&gt;1&lt;sup&gt;</span>
 <span class="sup" data-sur="Right">&lt;span class="sup" data-sur="The sur."&gt;Right&lt;span&gt;</span>
 <span class="sup" data-sul="Left">&lt;span class="sup" data-sul="The sul."&gt;Left&lt;span&gt;</span>
 <span class="sup" data-sub="Bottom">&lt;span class="sup" data-sub="The sub."&gt;Bottom&lt;span&gt;</span></pre>
+		
+		<hr>
+
   		<h3>
   			<span class="sup" data-img="http://farm9.staticflickr.com/8177/7950251026_f6761be7c4_n.jpg">PICTURE</span>.
   		</h3>
   		<pre lang="html">&lt;span class="sup" <span class="sup" data-text="The picture url.">data-img="url"</span>&gt;Text&lt;/span&gt;</pre>
+  		
+  		<hr>
+
+  		<h3>COLOR</h3>
+  		<p>I like <span class="sup" data-color="#7eccfa">blue</span>, <span class="sup" data-color="rgba(140, 111, 216, 1.000)">purple</span> and <span class="sup" data-color="hsla(83, 74%, 51%, 1.000)">grass green</span>.</p>
+  		<pre lang="html">&lt;span class="sup" data-color="#7eccfa"&gt;blue&lt;/span&gt;
+&lt;span class="sup" data-color="rgba(140, 111, 216, 1.000)"&gt;purple&lt;/span&gt;
+&lt;span class="sup" data-color="hsla(83, 74%, 51%, 1.000)"&gt;grass green&lt;/span&gt;</pre>
+		
+		<hr>
+
 		<h3>REQUIREMENTS</h3>
   		<ul>
-  			<li class="sup" data-sul="class:sul">jQuery Latest</li>
+  			<li>jQuery Latest</li>
   			<li>footnotes.css</li>
   			<li>footnotes.js</li>
   		</ul>
@@ -127,11 +167,5 @@
 		</div>
 	</div>
 <![endif]-->
-	<script type="text/javascript" charset="utf-8">
-		// The page box
-		var winh = $(document).height();
-		var boxh = $('.box').height();
-		$('.box').css('margin-top',winh/2-boxh/2-30);
-	</script>
 </body>
 </html>
