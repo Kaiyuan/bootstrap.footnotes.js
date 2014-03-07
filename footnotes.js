@@ -6,6 +6,7 @@ jQuery(document).ready(function($) {
 			var surtext = $(this).data("sur");
 			var subtext = $(this).data("sub");
 			var sultext = $(this).data("sul");
+			var sulcolor = $(this).data("color");
 			var sTop = $(window).scrollTop()
 			var wHeight = $(window).height();
 			var wWidth = $(window).width();
@@ -14,6 +15,22 @@ jQuery(document).ready(function($) {
 			var supw = $(this).outerWidth();
 			var suph = $(this).outerHeight();
 			var textboxw = $(this).parent('p,blockquote').outerWidth();
+
+			function supColor (color) {
+				var sup_Color_box = '<div class="sup-color" style="background-color:'+sulcolor+';"></div>';
+				$("body").append(sup_Color_box);
+				var supbox = $('.sup-color');
+				var supboxx = supbox.outerWidth();
+				var supboxy = supbox.outerHeight();
+				var supboxl = supx+supw/2-supboxx/2;
+				if (supboxl<0){supboxl=0};
+				if (textboxw&&supw>(textboxw-supboxx)/2) {
+					supbox.css('left', supx+supw-supboxx/2-20);
+				} else{
+					supbox.css('left', supboxl);
+				};
+				supbox.css('top', supy-supboxy);
+			}
 
 			function subBox (text) {
 				$("body").append('<div class="sub-box">'+text+'</div>' );
@@ -27,7 +44,6 @@ jQuery(document).ready(function($) {
 					subbox.css('left', subboxl);
 				};
 				subbox.css('top', supy+suph+8);
-				subbox.hide();
 			}
 			function supBox (text) {
 				if (supimg) {
@@ -46,14 +62,12 @@ jQuery(document).ready(function($) {
 					supbox.css('left', supboxl);
 				};
 				supbox.css('top', supy-supboxy-8);
-				supbox.hide();
 			}
 			function surBox (text) {
 				$("body").append('<div class="sur-box"><div>'+text+'</div></div>' );
 				var surbox = $('.sur-box');
 				surbox.css('left', supx+supw+16);
 				surbox.css('top', supy+suph/2-14);
-				surbox.hide();
 			}
 			function sulBox (text) {
 				$("body").append('<div class="sul-box"><div>'+text+'</div></div>' );
@@ -61,8 +75,11 @@ jQuery(document).ready(function($) {
 				var sulboxx = sulbox.outerWidth();
 				sulbox.css('left', supx-sulboxx-16);
 				sulbox.css('top', supy+suph/2-14);
-				sulbox.hide();
 			}
+
+			if (sulcolor) {
+				supColor(suptext)
+			};
 
 			if (suptext||supimg) {
 				if (sTop<supy-50) {
@@ -100,12 +117,12 @@ jQuery(document).ready(function($) {
 					supBox(subtext);
 				};
 			};
-			$('.sup-box,.sur-box,.sul-box,.sub-box').fadeIn("fast");
+			$('.sup-box,.sur-box,.sul-box,.sub-box,.sup-color').fadeIn("fast");
 		}
 	);
 	$(document).on('mouseleave','.sup',
 		function () {
-			$('.sup-box,.sur-box,.sul-box,.sub-box').detach();
+			$('.sup-box,.sur-box,.sul-box,.sub-box,.sup-color').detach();
 		}
 	);
 });

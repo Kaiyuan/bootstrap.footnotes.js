@@ -8,6 +8,11 @@ Only js [footontse.js](http://kaiyuan.github.com/footnotes.js/sup.html)
 ###PICTURE
 	<span class="sup" data-img="url">Text</span>
 
+###COLOR
+	<span class="sup" data-color="#7eccfa">blue</span>
+	<span class="sup" data-color="rgba(140, 111, 216, 1.000)">purple</span>
+	<span class="sup" data-color="hsla(83, 74%, 51%, 1.000)">grass green</span>
+
 ###REQUIREMENTS
 * jQuery Latest
 * footnotes.css
