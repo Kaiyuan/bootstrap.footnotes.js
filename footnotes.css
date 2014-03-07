@@ -100,12 +100,20 @@ sup[class="sup"] {
 .sup-color::after{
 	position: absolute;
 	content: "";
+	width: 0;
+	height: 0;
 	bottom: -10px;
 	border: 5px solid #000;
 	margin-left: -6px;
 	left: 50%;
 	border-width: 5px 6px;
 	border-color: #000 transparent transparent transparent;
+}
+.sub-box::after{
+	top: -7px;
+	margin-left: -5px;
+	left: 50%;
+	border-color: #000 transparent transparent #000;
 }
 .sur-box::after, .sul-box::after {
 	top: 0;
