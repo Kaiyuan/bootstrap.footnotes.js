@@ -36,13 +36,7 @@ sup[class="sup"] {
 	max-height: 120px;
 	max-width: 100%;
 }
-.sup-box::after, .sur-box::after, .sul-box::after, .sub-box::after {
-	content: "";
-	width: 0px;
-	height: 0px;
-	border: 5px solid #000;
-	z-index: 99;
-	position: absolute;
+.sup-box::after, .sur-box::after, .sul-box::after, .sub-box::after, .sup-color {
 	transform-style: preserve-3d;
 	-webkit-transform-style: preserve-3d;
 	-moz-transform-style: preserve-3d;
@@ -55,6 +49,14 @@ sup[class="sup"] {
     -webkit-transform: rotateZ(45deg);
     -moz-transform: rotateZ(45deg);
     -o-transform: rotateZ(45deg);
+}
+.sup-box::after, .sur-box::after, .sul-box::after, .sub-box::after {
+	content: "";
+	width: 0px;
+	height: 0px;
+	border: 5px solid #000;
+	z-index: 99;
+	position: absolute;
 }
 .sup-box::after{
 	bottom: -7px;
@@ -94,18 +96,8 @@ sup[class="sup"] {
 	border: 2px solid #000;
 	display: none;
 	position: absolute;
-	border-radius: 11px;
-	box-shadow: 0 3px 8px rgba(0,0,0,.3),inset 0 0 5px rgba(0,0,0,.3);
-}
-.sup-color::after{
-	position: absolute;
-	content: "";
-	bottom: -10px;
-	border: 5px solid #000;
-	margin-left: -6px;
-	left: 50%;
-	border-width: 5px 6px;
-	border-color: #000 transparent transparent transparent;
+	border-radius: 11px 11px 0 11px;
+	box-shadow: 3px 3px 8px rgba(0,0,0,.3),inset 0 0 5px rgba(0,0,0,.3);
 }
 .sub-box::after{
 	top: -7px;
