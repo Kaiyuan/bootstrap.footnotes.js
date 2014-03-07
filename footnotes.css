@@ -107,6 +107,12 @@ sup[class="sup"] {
 	border-width: 5px 6px;
 	border-color: #000 transparent transparent transparent;
 }
+.sub-box::after{
+	top: -7px;
+	margin-left: -5px;
+	left: 50%;
+	border-color: #000 transparent transparent #000;
+}
 .sur-box::after, .sul-box::after {
 	top: 0;
 	border-width: 13px;
