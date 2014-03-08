@@ -29,7 +29,7 @@ jQuery(document).ready(function($) {
 				} else{
 					supbox.css('left', supboxl);
 				};
-				supbox.css('top', supy-supboxy-4);
+				supbox.css('top', supy-supboxy-2);
 			}
 
 			function subBox (text) {
