@@ -59,7 +59,7 @@ sup[class="sup"] {
 	position: absolute;
 }
 .sup-box::after{
-	bottom: -7px;
+	bottom: -6px;
 	margin-left: -5px;
 	left: 50%;
 	border-color: transparent #000 #000 transparent;

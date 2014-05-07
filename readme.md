@@ -1,5 +1,5 @@
-#No bootstrap
-Only js [footontse.js](http://kaiyuan.github.com/footnotes.js/sup.html)
+#jQuery bootstrap
+[footontse.js](http://kaiyuan.github.io/bootstrap.footnotes.js/sup.html)
 
 ###EXAMPLE HTML
 	<span class="sup" data-text="This's text.">Text</span>
@@ -19,7 +19,6 @@ Only js [footontse.js](http://kaiyuan.github.com/footnotes.js/sup.html)
 * footnotes.js
 
 ##bootstrap.footnotes.js
-=============
 
 Instapaper style footnotes/endnotes for the web. Dependent upon jQuery/Twitter Bootstrap. Full documentation and examples [available on UX Lab](http://taitems.github.com/UX-Lab/BootstrapFootnotes/index.html).
 
