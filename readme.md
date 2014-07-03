@@ -1,4 +1,4 @@
-#jQuery bootstrap
+#jQuery footnotes
 [footontse.js](http://kaiyuan.github.io/bootstrap.footnotes.js/sup.html)
 
 ###EXAMPLE HTML
